@@ -1,0 +1,618 @@
+$primary-color: #9356dc;
+$secondary-color: #ff79da;
+$tertiary-color: #99e2d0;
+$greybgr-color: #f2f2f2;
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.loader {
+  border: 16px solid rgb(235, 232, 232);
+  border-top: 16px solid $primary-color;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 4s 1s forwards;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+  margin: auto;
+}
+
+@keyframes load-entrees {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    opacity: 0;
+    z-index: -10;
+  }
+}
+
+.header {
+  background-color: white;
+  &__location {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(235, 232, 232);
+    padding: 15px;
+    box-shadow: inset 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;
+
+    &__icon {
+      margin-right: 20px;
+      margin-left: -40px;
+    }
+  }
+  &__logo {
+    padding: 30px 0px 20px 0px;
+
+    &__image {
+      width: 50%;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  &__main {
+    background-color: $greybgr-color;
+    width: 100%;
+    padding-bottom: 50px;
+    margin-bottom: 20px;
+
+    &__title {
+      margin: 0;
+      text-align: center;
+      padding: 40px;
+      font-size: 25px;
+      font-weight: 1000;
+    }
+
+    &__subtitle {
+      text-align: center;
+      color: rgb(135, 135, 135);
+      font-size: 18px;
+      padding-bottom: 30px;
+      font-weight: 100;
+    }
+
+    &__button {
+      border-radius: 35px;
+      padding: 18px;
+      background-image: linear-gradient(
+        170deg,
+        $secondary-color,
+        $primary-color
+      );
+      border: 0;
+      color: white;
+      display: flex;
+      margin: 0 auto;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+      &:hover {
+        opacity: 0.8;
+        transition: all 500ms ease-in-out;
+      }
+    }
+  }
+}
+
+.booking {
+  padding: 20px 20px 20px 30px;
+  margin-bottom: 40px;
+
+  &__text {
+    font-weight: bold;
+  }
+
+  &__title {
+    font-size: 25px;
+  }
+
+  &__option {
+    border-radius: 25px;
+    background-color: $greybgr-color;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    padding: 30px;
+    position: relative;
+    cursor: pointer;
+  }
+  &__icon {
+    color: rgb(135, 135, 135);
+    font-size: 20px;
+    &__purple {
+      color: $primary-color;
+      font-size: 20px;
+    }
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__number {
+    position: absolute;
+    background-color: $primary-color;
+    border-radius: 50%;
+    left: -12px;
+    &__text {
+      padding: 3px 7px 3px 7px;
+      color: white;
+      font-size: 14px;
+    }
+  }
+}
+
+.bgr {
+  background-color: #f4eaff;
+}
+
+.main {
+  background-color: $greybgr-color;
+  width: 100%;
+}
+
+.restaurants {
+  &__title {
+    font-size: 25px;
+    padding: 40px 0 0 20px;
+  }
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1200px;
+  }
+
+  &__card {
+    position: relative;
+    padding: 0 20px 0 20px;
+
+    & img {
+      height: 180px;
+      object-fit: cover;
+      border-radius: 15px 15px 0 0;
+      width: 100%;
+    }
+    &__footer {
+      background-color: white;
+      border-radius: 0 0 15px 15px;
+      display: flex;
+      justify-content: space-between;
+      &__text {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+    }
+  }
+
+  &__subtitle {
+    position: absolute;
+    top: 6%;
+    right: 8%;
+    background-color: #99e2d0;
+    padding: 7px 25px 7px 25px;
+    border: 0;
+    font-size: 12px;
+    color: #1a4b3f;
+  }
+}
+
+.last-card {
+  margin-bottom: 60px;
+}
+.card__footer__text {
+  &__title {
+    font-weight: 900;
+    a {
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+    }
+  }
+  &__subtitle {
+    font-weight: 50;
+  }
+  &__icon {
+    font-size: 25px;
+    padding: 20px;
+    cursor: pointer;
+   
+    // z-index: 1;
+    // overflow: hidden;
+    // position: relative;
+    // background-image: linear-gradient(170deg, #ff79da, #9356dc);
+    // background-clip: text;
+    // -webkit-background-clip: text;
+    // color: transparent;
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   bottom: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   // height: 100%;
+    //   transform: scaleY(0);
+    //   transform-origin: bottom center;
+    //   background: linear-gradient(170deg, #ff79da, #9356dc);
+    //   z-index: -1;
+    //   transition: transform 0.3s;
+    // }
+
+    // &:hover::after {
+    //   transform: scaleY(1);
+    // }
+    
+
+    
+    
+      
+    
+  }
+}
+
+.footer {
+  background-color: #353535;
+  width: 100%;
+
+  &__info {
+    padding: 20px 20px 40px 20px;
+    
+
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      &__icon {
+        margin-right: 12px;
+        color: white;
+        font-size: 12px;
+      }
+    }
+    &__wrapper li {
+      list-style: none;
+    }
+    &__wrapper a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+  &__logo {
+    width: 100px;
+    filter: brightness(100) saturate(0%);
+    margin-bottom: 20px;
+  }
+}
+
+.menu__header {
+  &__logo {
+    display: flex;
+    padding: 20px;
+    a,
+    a:visited,
+    a:hover,
+    a:active {
+      color: black;
+    }
+    &__image {
+      width: 50%;
+      display: block;
+      margin: 0 auto;
+    }
+
+    &__icon {
+      font-size: 20px;
+    }
+  }
+
+  &__image img {
+    object-fit: cover;
+    width: 100%;
+    height: 250px;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.menu__container {
+  background-color: $greybgr-color;
+  width: 100%;
+  padding-bottom: 60px;
+  border-radius: 35px 35px 0 0;
+  z-index: 5;
+  position: relative;
+  margin-top: -40px;
+
+  &__title {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Shrikhand", sans-serif;
+    &__icon {
+      font-size: 30px;
+      padding-top: 22px;
+    }
+  }
+  &__cards {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+    animation: load-entrees 2s forwards;
+
+    &__title {
+      &::after {
+        content: "";
+        display: block;
+        width: 40px;
+        padding-top: 4px;
+        border-bottom: 3px solid $tertiary-color;
+      }
+    }
+  }
+  &__card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    cursor: pointer;
+
+    &__text {
+      padding: 12px;
+      flex: 1;
+      &__title {
+        padding: 0 0 10px 0;
+      }
+      &__subtitle {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    &__checkmark {
+      background-color: $tertiary-color;
+      width: 20%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translateX(100%);
+      transition: transform 1s ease-in-out;
+
+      &:hover {
+        transform: translateX(0%);
+      }
+
+      &__icon {
+        font-size: 25px;
+        background: white;
+        border-radius: 50%;
+        color: $tertiary-color;
+      }
+    }
+  }
+
+  &__button {
+    border-radius: 35px;
+    padding: 15px 70px 15px 70px;
+    background-image: linear-gradient(170deg, $secondary-color, $primary-color);
+    border: 0;
+    color: white;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      opacity: 0.8;
+      transition: all 500ms ease-in-out;
+    }
+  }
+}
+
+@media screen and (min-width: 481px) {
+  .header {
+    &__logo {
+      padding: 20px;
+
+      & > img {
+        margin: 0;
+        width: 30%;
+      }
+    }
+  }
+
+  .restaurants {
+    &__title {
+      text-align: center;
+    }
+    &__cards {
+      display: flex;
+      flex-direction: row;
+      padding: 0 20px 0 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    &__card img {
+      width: 100%;
+      height: 100px;
+    }
+    &__card {
+      width: 40%;
+      padding: 0;
+
+      &__footer {
+        &__text {
+          font-size: 12px;
+          padding: 10px;
+          white-space: nowrap;
+        }
+      }
+    }
+
+    &__subtitle {
+      right: 8%;
+      font-size: 10px;
+      padding: 6px 20px 6px 20px;
+    }
+  }
+
+  .footer {
+    &_wrapper {
+      justify-content: center;
+    }
+  }
+
+  .booking {
+    width: 60%;
+    margin: 0 auto;
+    &__title {
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    &__logo {
+      & > img {
+        width: 20%;
+      }
+    }
+    &__main {
+      background-color: white;
+      width: 50%;
+      &__subtitle {
+        padding: 40px;
+        margin-bottom: 60px;
+      }
+    }
+  }
+  .dekstop-section {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .restaurants {
+    &__title {
+      margin-left: 0;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    &__cards {
+      display: flex;
+      flex-direction: row;
+      padding: 0 20px 0 20px;
+      flex-wrap: nowrap;
+      margin: 0 auto;
+    }
+    &__card img {
+      width: 100%;
+      height: 100px;
+    }
+    &__card {
+      flex-basis: 40%;
+      padding: 0;
+
+      &__footer {
+
+        &__text {
+          font-size: 12px;
+          padding: 10px;
+          white-space: nowrap;
+        }
+      }
+    }
+
+    &__subtitle {
+      right: 8%;
+      font-size: 10px;
+      padding: 6px 20px 6px 20px;
+    }
+  }
+
+  .footer {
+
+    &__info {
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+
+    &_wrapper {
+      justify-content: center;
+    }
+  }
+
+  .booking {
+    width: 60%;
+    margin: 0 auto;
+
+    &__title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+  }
+
+  .menu__container {
+    &__cards {
+      width: 50%;
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+
+    &__title {
+      max-width: 51%;
+      margin: 0 auto;
+    }
+  }
+
+  .menu__header__logo__image {
+    width: 30%;
+  }
+}
