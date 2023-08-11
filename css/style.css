@@ -236,6 +236,15 @@ body {
   -webkit-background-clip: text;
   color: transparent;
   font-weight: 900;
+  animation: fill 0.8s forwards ease-in-out;
+}
+@keyframes fill {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .footer {
@@ -348,17 +357,20 @@ body {
   display: flex;
   justify-content: space-between;
 }
+.menu__container__card:hover .menu__container__card__checkmark {
+  transform: translateX(0%);
+  width: 50px;
+  opacity: 1;
+}
 .menu__container__card__checkmark {
   background-color: #99e2d0;
-  width: 20%;
+  width: 0;
+  opacity: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   transform: translateX(100%);
-  transition: transform 1s ease-in-out;
-}
-.menu__container__card__checkmark:hover {
-  transform: translateX(0%);
+  transition: all 1s ease-in-out;
 }
 .menu__container__card__checkmark__icon {
   font-size: 25px;
