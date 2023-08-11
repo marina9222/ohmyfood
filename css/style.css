@@ -321,6 +321,17 @@ body {
 .menu__container__title__icon {
   font-size: 30px;
   padding-top: 22px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+.menu__container__title__icon:hover {
+  background-image: linear-gradient(175deg, #ff79da, #9356dc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 900;
+  animation: fill 0.8s forwards ease-in-out;
 }
 .menu__container__cards {
   padding: 20px;
