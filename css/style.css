@@ -227,6 +227,15 @@ body {
   font-size: 25px;
   padding: 20px;
   cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+.card__footer__text__icon:hover {
+  background-image: linear-gradient(175deg, #ff79da, #9356dc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 900;
 }
 
 .footer {
@@ -424,6 +433,8 @@ body {
 @media screen and (min-width: 768px) {
   .header__logo > img {
     width: 20%;
+    max-width: 1200px;
+    margin: 0 auto;
   }
   .header__main {
     background-color: white;
