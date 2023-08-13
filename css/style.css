@@ -373,6 +373,9 @@ body {
   width: 50px;
   opacity: 1;
 }
+.menu__container__card:hover .menu__container__card__checkmark__icon {
+  animation: rotateIcon 2s forwards;
+}
 .menu__container__card__checkmark {
   background-color: #99e2d0;
   width: 0;
@@ -388,6 +391,14 @@ body {
   background: white;
   border-radius: 50%;
   color: #99e2d0;
+}
+@keyframes rotateIcon {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
 }
 .menu__container__button {
   border-radius: 35px;
@@ -523,11 +534,13 @@ body {
     max-width: 1200px;
   }
   .menu__container__title {
-    max-width: 51%;
+    max-width: 50%;
     margin: 0 auto;
   }
   .menu__header__logo__image {
-    width: 30%;
+    width: 20%;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 }
 
