@@ -3,8 +3,6 @@ $secondary-color: #ff79da;
 $tertiary-color: #99e2d0;
 $greybgr-color: #f2f2f2;
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -13,6 +11,24 @@ $greybgr-color: #f2f2f2;
 
 body {
   font-family: "Roboto", sans-serif;
+  position: relative;
+}
+
+.pre-loader {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  z-index: 10;
+  animation: hide 0s 4s forwards;
 }
 
 .loader {
@@ -21,7 +37,9 @@ body {
   border-radius: 50%;
   width: 120px;
   height: 120px;
-  animation: spin 4s 1s forwards;
+  animation-name: spin;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
   position: fixed;
   top: 0;
   left: 0;
@@ -32,14 +50,24 @@ body {
   margin: auto;
 }
 
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -10;
+  }
+}
+
 @keyframes load-entrees {
   0% {
-    transform: translateX(-100%);
+    transform: translateY(-100%);
     opacity: 0;
   }
 
   100% {
-    transform: translateX(0);
+    transform: translateY(0);
     opacity: 1;
   }
 }
@@ -60,6 +88,7 @@ body {
     z-index: -10;
   }
 }
+
 
 .header {
   background-color: white;
@@ -127,11 +156,16 @@ body {
       &:hover {
         opacity: 0.8;
         transition: all 500ms ease-in-out;
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+          0 17px 50px 0 rgba(0, 0, 0, 0.19);
       }
     }
   }
 }
 
+.booking__option:hover .booking__icon {
+  color: #9356dc;
+}
 .booking {
   padding: 20px 20px 20px 30px;
   margin-bottom: 40px;
@@ -154,13 +188,16 @@ body {
     padding: 30px;
     position: relative;
     cursor: pointer;
+
+    &:hover {
+      background-color: #f4eaff;
+    }
   }
   &__icon {
     color: rgb(135, 135, 135);
     font-size: 20px;
-    &__purple {
+    &:hover {
       color: $primary-color;
-      font-size: 20px;
     }
   }
 
@@ -183,15 +220,18 @@ body {
   }
 }
 
-.bgr {
-  background-color: #f4eaff;
-}
-
 .main {
   background-color: $greybgr-color;
   width: 100%;
 }
 
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
 .restaurants {
   &__title {
     font-size: 25px;
@@ -255,12 +295,14 @@ body {
   &__subtitle {
     font-weight: 50;
   }
+
   &__icon {
     font-size: 25px;
     padding: 20px;
     cursor: pointer;
     overflow: hidden;
     position: relative;
+    z-index: 9;
 
     &:hover {
       background-image: linear-gradient(175deg, #ff79da, #9356dc);
@@ -270,16 +312,16 @@ body {
       font-weight: 900;
       animation: fill 0.8s forwards ease-in-out;
     }
+  }
+}
 
-    @keyframes fill {
-      0% {
-        opacity: 0;
-      }
+@keyframes fill {
+  0% {
+    opacity: 0;
+  }
 
-      100% {
-        opacity: 1;
-      }
-    }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -346,6 +388,9 @@ body {
   }
 }
 
+
+
+
 .menu__container {
   background-color: $greybgr-color;
   width: 100%;
@@ -384,6 +429,18 @@ body {
     gap: 15px;
     margin-bottom: 30px;
     animation: load-entrees 2s forwards;
+
+    &__first__load {
+      animation-name: 0s;
+    }
+
+    &__second__load {
+      animation-delay: 0.5s;
+    }
+
+    &__third__load {
+      animation-delay: 1s;
+    }
 
     &__title {
       &::after {
@@ -441,7 +498,6 @@ body {
         background: white;
         border-radius: 50%;
         color: $tertiary-color;
-        
       }
 
       @keyframes rotateIcon {
@@ -470,6 +526,8 @@ body {
     &:hover {
       opacity: 0.8;
       transition: all 500ms ease-in-out;
+      box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+        0 17px 50px 0 rgba(0, 0, 0, 0.19);
     }
   }
 }
