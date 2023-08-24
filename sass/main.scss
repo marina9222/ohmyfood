@@ -26,7 +26,6 @@ body {
   align-items: center;
   height: 100%;
   width: 100%;
-  opacity: 1;
   z-index: 10;
   animation: hide 0s 4s forwards;
 }
@@ -60,18 +59,6 @@ body {
   }
 }
 
-@keyframes load-entrees {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -88,7 +75,6 @@ body {
     z-index: -10;
   }
 }
-
 
 .header {
   background-color: white;
@@ -295,24 +281,6 @@ body {
   &__subtitle {
     font-weight: 50;
   }
-
-  &__icon {
-    font-size: 25px;
-    padding: 20px;
-    cursor: pointer;
-    overflow: hidden;
-    position: relative;
-    z-index: 9;
-
-    &:hover {
-      background-image: linear-gradient(175deg, #ff79da, #9356dc);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      font-weight: 900;
-      animation: fill 0.8s forwards ease-in-out;
-    }
-  }
 }
 
 @keyframes fill {
@@ -388,9 +356,6 @@ body {
   }
 }
 
-
-
-
 .menu__container {
   background-color: $greybgr-color;
   width: 100%;
@@ -405,22 +370,6 @@ body {
     display: flex;
     justify-content: space-between;
     font-family: "Shrikhand", sans-serif;
-    &__icon {
-      font-size: 30px;
-      padding-top: 22px;
-      cursor: pointer;
-      overflow: hidden;
-      position: relative;
-
-      &:hover {
-        background-image: linear-gradient(175deg, #ff79da, #9356dc);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        font-weight: 900;
-        animation: fill 0.8s forwards ease-in-out;
-      }
-    }
   }
   &__cards {
     padding: 20px;
@@ -431,15 +380,24 @@ body {
     animation: load-entrees 2s forwards;
 
     &__first__load {
-      animation-name: 0s;
+      animation-delay: 0s;
+      animation-name: load-entrees;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
     }
 
     &__second__load {
       animation-delay: 0.5s;
+      animation-name: load-entrees;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
     }
 
     &__third__load {
       animation-delay: 1s;
+      animation-name: load-entrees;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
     }
 
     &__title {
@@ -464,12 +422,20 @@ body {
     &__text {
       padding: 12px;
       flex: 1;
+      overflow: hidden;
       &__title {
         padding: 0 0 10px 0;
       }
       &__subtitle {
         display: flex;
         justify-content: space-between;
+        overflow: hidden;
+        white-space: nowrap;
+
+        &__dish {
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
       }
     }
 
@@ -498,6 +464,18 @@ body {
         background: white;
         border-radius: 50%;
         color: $tertiary-color;
+      }
+
+      @keyframes load-entrees {
+        0% {
+          transform: translateY(-100%);
+          opacity: 0;
+        }
+
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
       }
 
       @keyframes rotateIcon {
@@ -530,6 +508,55 @@ body {
         0 17px 50px 0 rgba(0, 0, 0, 0.19);
     }
   }
+}
+
+.heart-empty-2 {
+  font-size: 25px;
+  padding-top: 22px;
+  cursor: pointer;
+  position: relative;
+  z-index: 9;
+  padding-right: 20px;
+}
+
+.heart-fill-2 {
+  background: linear-gradient(pink, purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  font-size: 25px;
+  padding-top: 22px;
+  cursor: pointer;
+  z-index: 9;
+  padding-right: 20px;
+}
+
+.heart-fill-2:hover {
+  opacity: 1;
+}
+
+.heart-empty {
+  font-size: 30px;
+  padding-top: 25px;
+  cursor: pointer;
+  position: relative;
+}
+.heart-items i {
+  transition: opacity 1s ease-in-out;
+}
+.heart-fill {
+  background: linear-gradient(pink, purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  font-size: 30px;
+  padding-top: 25px;
+  cursor: pointer;
+  z-index: 9;
+}
+
+.heart-fill:hover {
+  opacity: 1;
 }
 
 @media screen and (min-width: 572px) {
@@ -568,6 +595,7 @@ body {
           font-size: 12px;
           padding: 10px;
           white-space: nowrap;
+          height: 60px;
         }
       }
     }
@@ -639,6 +667,7 @@ body {
       padding: 0;
 
       &__footer {
+        height: 60px;
         &__text {
           font-size: 12px;
           padding: 10px;

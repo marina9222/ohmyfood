@@ -35,9 +35,8 @@
   </head>
   <body>
     <div class="pre-loader">
-    
-    <div class="loader"></div>
-  </div>
+      <div class="loader"></div>
+    </div>
 
     <header class="header">
       <div class="header__logo">
@@ -53,7 +52,7 @@
       </div>
     </header>
     <div class="dekstop-section">
-      <div class="header__main">
+      <section class="header__main">
         <h1 class="header__main__title">Book the menu you like</h1>
         <h2 class="header__main__subtitle">
           Discover top-of-the-art restaurants we <br />picked for you
@@ -61,9 +60,9 @@
         <a class="header__main__button" href="#restaurants">
           Explore our restaurants
         </a>
-      </div>
+      </section>
 
-      <div class="booking">
+      <section class="booking">
         <h1 class="booking__title">How it works</h1>
         <div class="booking__options">
           <div class="booking__option">
@@ -88,10 +87,10 @@
             <p class="booking__text">Go enjoy it at the restaurant</p>
           </div>
         </div>
-      </div>
+      </section>
     </div>
 
-    <main class="main">
+    <section class="main">
       <div class="restaurants" id="restaurants">
         <h1 class="restaurants__title">Restaurants</h1>
         <div class="restaurants__cards">
@@ -106,13 +105,15 @@
 
             <div class="restaurants__card__footer">
               <div class="restaurants__card__footer__text">
-                <h4 class="card__footer__text__title">
-                 The Full Pallette 
-                </h4>
+                <h4 class="card__footer__text__title">The Full Pallette</h4>
                 <p class="card__footer__text__subtitle">Paris</p>
               </div>
-             
-              <i class="fa-regular fa-heart card__footer__text__icon"></i>
+              <div class="fa-stack heart-items">
+                <i class="fa-regular fa-heart fa-stack-2x heart-empty-2"></i>
+                <i class="fa-solid fa-heart fa-stack-2x heart-fill-2"></i>
+              </div>
+
+              <!-- <i class="fa-regular fa-heart card__footer__text__icon"></i> -->
             </div>
             <a href="menu1.html" class="card-link"></a>
           </div>
@@ -126,12 +127,14 @@
 
             <div class="restaurants__card__footer">
               <div class="restaurants__card__footer__text">
-                <h4 class="card__footer__text__title">
-                 The Enchanted Plate
-                </h4>
+                <h4 class="card__footer__text__title">The Enchanted Plate</h4>
                 <p class="card__footer__text__subtitle">Paris</p>
               </div>
-              <i class="fa-regular fa-heart card__footer__text__icon"></i>
+              <div class="fa-stack heart-items">
+                <i class="fa-regular fa-heart fa-stack-2x heart-empty-2"></i>
+                <i class="fa-solid fa-heart fa-stack-2x heart-fill-2"></i>
+              </div>
+              <!-- <i class="fa-regular fa-heart card__footer__text__icon"></i> -->
             </div>
             <a href="menu2.html" class="card-link"></a>
           </div>
@@ -144,12 +147,14 @@
 
             <div class="restaurants__card__footer">
               <div class="restaurants__card__footer__text">
-                <h4 class="card__footer__text__title">
-                  Bastille
-                </h4>
+                <h4 class="card__footer__text__title">Bastille</h4>
                 <p class="card__footer__text__subtitle">Paris</p>
               </div>
-              <i class="fa-regular fa-heart card__footer__text__icon"></i>
+              <div class="fa-stack heart-items">
+                <i class="fa-regular fa-heart fa-stack-2x heart-empty-2"></i>
+                <i class="fa-solid fa-heart fa-stack-2x heart-fill-2"></i>
+              </div>
+              <!-- <i class="fa-regular fa-heart card__footer__text__icon"></i> -->
             </div>
             <a href="menu3.html" class="card-link"></a>
           </div>
@@ -162,18 +167,20 @@
 
             <div class="restaurants__card__footer">
               <div class="restaurants__card__footer__text">
-                <h4 class="card__footer__text__title">
-                  Le Gourmand
-                </h4>
+                <h4 class="card__footer__text__title">Le Gourmand</h4>
                 <p class="card__footer__text__subtitle">Paris</p>
               </div>
-              <i class="fa-regular fa-heart card__footer__text__icon"></i>
+              <div class="fa-stack heart-items">
+                <i class="fa-regular fa-heart fa-stack-2x heart-empty-2"></i>
+                <i class="fa-solid fa-heart fa-stack-2x heart-fill-2"></i>
+              </div>
+              <!-- <i class="fa-regular fa-heart card__footer__text__icon"></i> -->
             </div>
             <a href="menu4.html" class="card-link"></a>
           </div>
         </div>
       </div>
-    </main>
+    </section>
     <footer class="footer">
       <div class="footer__info">
         <img
