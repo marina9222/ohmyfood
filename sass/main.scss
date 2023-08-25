@@ -379,6 +379,10 @@ body {
     margin-bottom: 30px;
     animation: load-entrees 2s forwards;
 
+    &__load__wrapper {
+      overflow: hidden;
+    }
+
     &__first__load {
       animation-delay: 0s;
       animation-name: load-entrees;

@@ -339,6 +339,9 @@ body {
   margin-bottom: 30px;
   animation: load-entrees 2s forwards;
 }
+.menu__container__cards__load__wrapper {
+  overflow: hidden;
+}
 .menu__container__cards__first__load {
   animation-delay: 0s;
   animation-name: load-entrees;
